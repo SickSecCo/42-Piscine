@@ -1,0 +1,5 @@
+Credentials cache: API:BFB0074D-C06E-475A-89BA-451151E3E525
+        Principal: fforlini@42ROMA.IT
+
+  Issued                Expires               Principal
+Sep 28 19:07:34 2021  Sep 29 05:07:23 2021  krbtgt/42ROMA.IT@42ROMA.IT
