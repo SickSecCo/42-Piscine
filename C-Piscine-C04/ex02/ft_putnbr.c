@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fforlini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:10:35 by fforlini          #+#    #+#             */
-/*   Updated: 2021/10/13 11:04:51 by fforlini         ###   ########.fr       */
+/*   Created: 2021/10/14 12:34:40 by fforlini          #+#    #+#             */
+/*   Updated: 2021/10/14 13:05:32 by fforlini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (s1[i] != '\0' && s1[i] == s2[i])
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
 	{
-		i++;
+		ft_putnbr(nb / 10);
+		ft_putchar('8');
 	}
-	return (s1[i] - s2[i]);
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else
+	{
+		if (nb > 9)
+			ft_putnbr(nb / 10);
+		ft_putchar(48 + nb % 10);
+	}
 }
