@@ -1,9 +1,0 @@
-#include <stdio.h>
-#include <math.h>
-int main(void)
-{
-    int nb = 4;
-    int power = 2;
-    printf("%d\n", ft_iterative_power(nb, power));
-    printf("%f\n", pow(nb, power));
-}

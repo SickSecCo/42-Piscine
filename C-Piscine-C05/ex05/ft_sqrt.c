@@ -6,8 +6,30 @@
 /*   By: fforlini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 22:37:23 by fforlini          #+#    #+#             */
-/*   Updated: 2021/10/14 22:37:26 by fforlini         ###   ########.fr       */
+/*   Updated: 2021/10/17 17:59:17 by fforlini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_sqrt(int nb)
+{
+	int	n;
 
+	n = 0;
+	if (nb <= 0)
+		return (0);
+	else if (nb == 1)
+		return (1);
+	while (n * n != nb)
+	{
+		n++;
+		if (n >= nb)
+		{
+			return (0);
+		}
+		else if (n >= 46341)
+		{
+			return (0);
+		}
+	}
+	return (n);
+}

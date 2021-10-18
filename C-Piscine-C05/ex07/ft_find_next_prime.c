@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fforlini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 11:06:17 by fforlini          #+#    #+#             */
-/*   Updated: 2021/10/14 23:20:51 by fforlini         ###   ########.fr       */
+/*   Created: 2021/10/17 15:19:44 by fforlini          #+#    #+#             */
+/*   Updated: 2021/10/17 18:22:21 by fforlini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	int	i;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && n > 1)
+int	ft_find_prime(int nb)
+{
+	int	c;
+
+	while (1)
 	{
-		i++;
-		n--;
+		c = 2;
+		if (nb < 2)
+			return (0);
+		while (c <= nb / 2)
+		{
+			if (nb % c == 0)
+				return (0);
+			c++;
+		}
+		return (1);
 	}
-	return (s1[i] - s2[i]);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	while (nb < 2147483647 && !ft_find_prime(nb))
+		nb++;
+	return (nb);
 }
