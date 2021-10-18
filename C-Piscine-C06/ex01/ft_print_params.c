@@ -28,6 +28,7 @@ int main(int ac, char **agv)
         a = 0;
         while (agv[c][a] != '\0')
             ft_putchar(agv[c][a++]);
+        write (1, "\n", 1);
         c++;
     }
     }
